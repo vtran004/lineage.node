@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var mainRoutes = require("./routes/main");
 var phoneRoutes = require("./routes/phone");
 var mongoose = require("mongoose");
-mongoose.connect(process.env.MONGO);
+mongoose.connect(process.env.mongoUrl);
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
