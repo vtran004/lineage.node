@@ -5,6 +5,7 @@ var bodyParser = require('body-parser');
 var mainRoutes = require("./routes/main");
 var phoneRoutes = require("./routes/phone");
 var mongoose = require("mongoose");
+console.log(process.env.mongoUrl);
 mongoose.connect(process.env.mongoUrl);
 
 var app = express();
