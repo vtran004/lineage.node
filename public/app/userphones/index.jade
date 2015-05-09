@@ -1,0 +1,52 @@
+.container.padding
+	h2 New Phone
+	hr
+	form(data-ng-submit="vm.save()")
+		.form-group
+			label Phone Model
+			input(data-ng-model="vm.new.name" required type="text")
+		.form-group
+			label Manufacturer
+			input(data-ng-model="vm.new.make" required type="text")
+		.form-group
+			label Released Year
+			input(data-ng-model="vm.new.year" required type="number" min="1990" max="2100" step="1")
+		.form-group
+			label
+			input(type="submit" value="Save")
+			
+	h2 Phones
+	hr
+	table.table-bordered
+		thead
+			tr
+				th Phone Model
+				th Manufacturer
+				th Released Year
+				th
+		tbody
+			tr(data-ng-repeat="p in vm.phones")
+				td {{p.name}}
+				td {{p.make}}
+				td {{p.year}}
+				td
+					a(data-ng-click="vm.phone = p" href="") Edit
+					| &nbsp;|&nbsp;
+					a(data-ng-click="vm.delete(p._id)" href="") Delete
+	br
+	div(data-ng-show="vm.phone")
+		h2 Phone
+		hr
+		form(data-ng-submit="vm.update()")
+			.form-group
+				label Phone Model
+				input(data-ng-model="vm.phone.name" required type="text")
+			.form-group
+				label Manufacturer
+				input(data-ng-model="vm.phone.make" required type="text")
+			.form-group
+				label Released Year
+				input(data-ng-model="vm.phone.year" required type="number" min="1990" max="2100" step="1")
+			.form-group
+				label
+				input(type="submit" value="Update")
