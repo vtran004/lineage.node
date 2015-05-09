@@ -17,12 +17,8 @@
         url: '/userphones',
         templateUrl: 'app/userphones/index.html',
         controller: 'UserphoneController as vm'
-      })
-      .state('mongodb',{
-        url: '/mongodb',
-        templateUrl: 'app/exercise/mongodb.html'
       });
       
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/userphones');
   }
 })();
