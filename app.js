@@ -19,6 +19,6 @@ app.use(express.static(__dirname + '/public'));
 app.use('/api', phoneRoutes);
 app.use('/', mainRoutes);
 
-app.listen(3000, function(err){
+app.listen(process.env.PORT, function(err){
     if(err) console.log(err);
 });
